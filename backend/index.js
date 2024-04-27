@@ -23,10 +23,7 @@ app.use(express.json());
 app.use(cookieSession({
     name: "session",
     keys: [process.env.COOKIE_KEY_1],
-    maxAge: 7*24*60*60*1000,
-    sameSite: 'none',
-    secure: false,
-    httpOnly: true
+    maxAge: 7*24*60*60*1000
 }));
 app.use(passport.initialize());
 app.use(passport.session());
