@@ -10,7 +10,7 @@ router.route("/google")
 
 router.route("/google/callback")
     .get(passport.authenticate("google",{
-        successRedirect: "http://localhost:5173",
+        successRedirect: "https://keep-notes-client.vercel.app",
         failureRedirect: "/login/failed"
     }));
 
