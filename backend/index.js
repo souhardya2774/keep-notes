@@ -21,11 +21,11 @@ connectDB();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieSession({
-    name: "__session",
+    name: "session",
     keys: [process.env.COOKIE_KEY_1],
     maxAge: 7*24*60*60*1000,
-    sameSite: false,
-    secure: true,
+    sameSite: 'none',
+    secure: false,
     httpOnly: true
 }));
 app.use(passport.initialize());
