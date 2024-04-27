@@ -16,7 +16,7 @@ const loginFailed=(req,res)=>{
 // @Check User is logged in or not
 const checkLogin= asyncHandler(async(req,res)=>{
     // console.log(req);
-    // console.log("Here",req.user);
+    console.log("Here",req.user);
     if(!(req.user) || !(isValidObjectId(req.user))){
         return res.status(401).json({
             auth: false
