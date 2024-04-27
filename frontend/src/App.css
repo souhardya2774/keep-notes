@@ -1,0 +1,36 @@
+*{
+    color: grey;
+}
+
+#page{
+    display: flex;
+    position: fixed;
+    top: 3.5rem;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.notFound{
+    margin: 15% auto;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+#homeLink{
+    text-decoration: underline;
+}
+
+#loginBtn{
+    width: 200px;
+    background-color: rgb(245, 200, 66);
+    font-size: 1.85rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 4px;
+}
+
+main{
+    height: 95%;
+    overflow-y: scroll;
+}

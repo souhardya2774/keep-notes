@@ -1,0 +1,74 @@
+.flex{
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.high{
+    transform: scale(1.5);
+    padding: 1rem;
+}
+
+#sideBar{
+    transform: scale(2);
+}
+
+#sideBarButton:hover{
+    background-color: rgb(231, 231, 231);
+}
+
+#leftNav button{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+}
+
+#searchbar{
+    width: 35%;
+}
+
+#searchBox{
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    flex-direction: row;
+    background-color: gainsboro;
+}
+
+#search{
+    width: 100%;
+    font-size: 1rem;
+    background-color: inherit;
+    outline: none;
+    border-style: none;
+}
+
+label[for="search"]{
+    padding: 2px;
+}
+
+#logout,#login{
+    cursor: pointer;
+    font-size: large;
+    background-color: rgb(233, 233, 233);
+    color: rgb(72, 72, 72);
+    border-radius: 4px;
+}
+
+.logEle{
+    padding: 4px;
+    margin: 4px;
+}
+
+nav{
+    border-bottom: 1px solid rgb(180, 180, 180);
+}
+
+a{
+    text-decoration: none;
+}
