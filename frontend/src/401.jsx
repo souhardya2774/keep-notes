@@ -3,7 +3,7 @@ import "./App.css";
 
 const Unauthorized=()=>{
     const google= ()=>{
-        window.open("http://localhost:8080/auth/google","_self");
+        window.open("https://keep-notes-server-gamma.vercel.app/auth/google","_self");
     };
 
     return (

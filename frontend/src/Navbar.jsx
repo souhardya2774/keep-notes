@@ -17,11 +17,11 @@ function Navbar({user, search, setSearch, activeSidebar, setActiveSidebar}) {
 
 
     const google= ()=>{
-        window.open("http://localhost:8080/auth/google","_self");
+        window.open("https://keep-notes-server-gamma.vercel.app/auth/google","_self");
     };
 
     const logout=async ()=>{
-        window.open("http://localhost:8080/auth/logout","_self");
+        window.open("https://keep-notes-server-gamma.vercel.app/auth/logout","_self");
     };
 
   return (

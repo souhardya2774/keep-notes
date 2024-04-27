@@ -1,5 +1,5 @@
 const allowedOrigins=[
-    "http://localhost:5173"
+    "https://keep-notes-client.vercel.app"
 ];
 
 module.exports= allowedOrigins;
