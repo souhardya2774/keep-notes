@@ -38,7 +38,7 @@ const checkLogin= asyncHandler(async(req,res)=>{
 // @Logout User
 const logout= (req,res)=>{
     req.logout();
-    res.redirect("http://localhost:5173");
+    res.redirect("https://keep-notes-client.vercel.app");
 };
 
 module.exports= {
