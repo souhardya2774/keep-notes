@@ -1,0 +1,40 @@
+.notesComponent{
+    margin: 2rem 5rem;
+}
+.noteComponent{
+    border-radius: 8px;
+    border: 1px solid rgb(0, 0, 0, 0.25);
+    padding: 0 1rem;
+    word-wrap: break-word;
+}
+
+.noteTitle{
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+.noteComponent div{
+    padding: 0.5rem;
+}
+
+.noteLabels{
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.noteLabel{
+    background-color: rgb(229, 229, 229);
+    margin-right: 8px;
+    margin-top: 2px;
+    font-size: 0.75rem;
+    padding: 4px 8px !important;
+}
+
+.noteFooter{
+    opacity: 0;
+}
+
+.noteComponent:hover>.noteFooter{
+    opacity: 1;
+    
+}

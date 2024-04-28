@@ -1,0 +1,28 @@
+.menu{
+    width: 9rem;
+    padding-right: 8.5rem;
+    padding-left: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu:hover{
+    background-color: rgb(234, 234, 234);
+}
+
+.menuIcon{
+    padding: 1.25rem;
+}
+
+.active{
+    background-color: rgb(254, 239, 195);
+}
+
+#sideBarDiv{
+    word-wrap: break-word;
+    word-break: break-all;
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: white;
+}

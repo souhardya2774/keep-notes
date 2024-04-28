@@ -1,0 +1,23 @@
+.btn{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	transform: scale(1.25);
+}
+
+.editInput{
+	font-size: medium !important;
+	font-weight: 500 !important;
+}
+
+.labelFormAdd{
+	margin: 0.75rem 0;
+}
+
+.updateInput{
+	font-size: 1rem !important;
+}
