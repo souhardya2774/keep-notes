@@ -18,6 +18,7 @@ const passportSetup= require("./config/passportSetup");
 
 connectDB();
 
+app.set("trust proxy", true); 
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieSession({
