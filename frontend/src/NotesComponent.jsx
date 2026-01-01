@@ -5,10 +5,10 @@ import "./NotesComponent.css";
 
 const breakpointColumnsObj = {
     default: 5,
-    1200: 4,
-    1095: 3,
-    845: 2,
-    610: 1
+    1400: 4,
+    1100: 3,
+    768: 2,
+    500: 1
   };
 
 const NotesComponent=({connection,id,searchedPosts,posts,setPosts,labels})=>{

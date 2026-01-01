@@ -1,9 +1,11 @@
 const mongoose= require("mongoose");
 
-const auth= (err,req,res,next)=>{
-    if(!req.user){
+const auth= (req,res,next)=>{
+    console.log("Auth middleware - req.user:", req.user);
+    
+    if(!req.user || !req.user._id){
         return res.status(401).json({ message: 'Unauthorized' });
-    }else if(!mongoose.isValidObjectId(req.user.id)){
+    }else if(!mongoose.isValidObjectId(req.user._id)){
         return res.status(401).json({ message: 'Unauthorized' });
     }else{
         next();

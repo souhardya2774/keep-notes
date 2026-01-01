@@ -35,6 +35,7 @@ app.use(passport.session());
 app.use("/auth",require("./routes/authRoutes"));
 app.use("/notes",require("./routes/noteRoutes"));
 app.use("/labels",require("./routes/labelRoutes"));
+app.use("/profile",require("./routes/profileRoutes"));
 
 
 app.all("*",(req,res)=>{

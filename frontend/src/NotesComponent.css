@@ -1,16 +1,42 @@
 .notesComponent{
-    margin: 2rem 5rem;
+    margin: 1rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0.5rem;
 }
+
+/* Prevent horizontal overflow from masonry */
+.my-masonry-grid{
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.my-masonry-grid_column{
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box;
+}
+
 .noteComponent{
     border-radius: 8px;
     border: 1px solid rgb(0, 0, 0, 0.25);
     padding: 0 1rem;
     word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .noteTitle{
     margin-top: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .noteComponent div{
@@ -28,13 +54,92 @@
     margin-top: 2px;
     font-size: 0.75rem;
     padding: 4px 8px !important;
+    border-radius: 12px;
+    white-space: nowrap;
 }
 
 .noteFooter{
     opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .noteComponent:hover>.noteFooter{
     opacity: 1;
+}
+
+/* Responsive Notes Layout */
+@media (max-width: 1200px) {
+    .notesComponent {
+        margin: 1.5rem 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .notesComponent {
+        margin: 1rem 1rem;
+        padding: 0 0.5rem;
+    }
     
+    .noteTitle {
+        font-size: 0.95rem;
+    }
+    
+    .noteComponent {
+        padding: 0 0.75rem;
+    }
+    
+    .noteComponent div {
+        padding: 0.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .notesComponent {
+        margin: 0.75rem 0.5rem;
+        padding: 0 0.25rem;
+    }
+    
+    .noteTitle {
+        font-size: 0.9rem;
+    }
+    
+    .noteComponent {
+        padding: 0 0.5rem;
+    }
+    
+    .noteLabel {
+        font-size: 0.7rem;
+        padding: 3px 6px !important;
+        margin-right: 6px;
+        margin-top: 1px;
+    }
+}
+
+/* Improve masonry grid responsiveness */
+@media (max-width: 610px) {
+    .my-masonry-grid {
+        gap: 15px !important;
+    }
+    
+    .my-masonry-grid_column {
+        padding-left: 0 !important;
+    }
+    
+    .my-masonry-grid_column > div {
+        margin-bottom: 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .my-masonry-grid {
+        gap: 10px !important;
+    }
+    
+    .my-masonry-grid_column {
+        padding-left: 0 !important;
+    }
+    
+    .my-masonry-grid_column > div {
+        margin-bottom: 15px !important;
+    }
 }

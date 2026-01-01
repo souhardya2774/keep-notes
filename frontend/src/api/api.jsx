@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://keep-notes-server-gamma.vercel.app",
+    baseURL: "http://localhost:8080",
     withCredentials: true
 });

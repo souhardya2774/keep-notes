@@ -4,6 +4,8 @@
     margin: 2rem auto;
     font-size: 1.05rem;
     border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
 }
 
 #newNoteInput{
@@ -11,6 +13,7 @@
     background-color: inherit;
     border: none;
     outline: none;
+    width: 100%;
 }
 
 #inputComponent div[role="button"]{
@@ -20,11 +23,11 @@
 }
 
 .fullBody{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     z-index: 0;
 }
 
@@ -45,11 +48,14 @@ label[for="newNoteTitleInput"]{
     padding: 1rem;
     padding-bottom: 0.15rem;
     border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
 }
 
 #newNoteTitleInput,#newNoteBodyInput{
     border: none;
     outline: none;
+    width: 100%;
 }
 
 #newNoteTitleInput{
@@ -95,6 +101,8 @@ label[for="newNoteTitleInput"]{
     background-color: white;
     padding: 0.75rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 4px;
+    max-width: 250px;
 }
 
 .addLadelPos{
@@ -118,6 +126,8 @@ label[for="newNoteTitleInput"]{
     font-size: smaller;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .showLabel{
@@ -125,4 +135,91 @@ label[for="newNoteTitleInput"]{
     margin-left: 4px;
     background-color: rgb(227, 227, 227);
     color: rgb(46, 46, 46);
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    #inputComponent, #updateComponent {
+        margin: 1rem auto;
+        width: 95%;
+        font-size: 1rem;
+    }
+    
+    #componentInput, #componentUdpute {
+        margin: 1rem auto;
+        width: 95%;
+        padding: 0.75rem;
+        padding-bottom: 0.15rem;
+    }
+    
+    #newNoteTitleInput {
+        font-size: 1rem;
+    }
+    
+    #newNoteBodyInput {
+        margin: 1.25rem 0;
+        font-size: 0.95rem;
+    }
+    
+    .button-left {
+        font-size: 0.95rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    .buttons-right {
+        width: 20%;
+    }
+    
+    .addLabel {
+        font-size: 0.8rem;
+        max-width: 200px;
+    }
+    
+    .showLabel {
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    #inputComponent, #updateComponent {
+        margin: 0.75rem auto;
+        width: 98%;
+        font-size: 0.95rem;
+    }
+    
+    #componentInput, #componentUdpute {
+        margin: 0.75rem auto;
+        width: 98%;
+        padding: 0.5rem;
+    }
+    
+    #newNoteTitleInput {
+        font-size: 0.95rem;
+    }
+    
+    #newNoteBodyInput {
+        margin: 1rem 0;
+        font-size: 0.9rem;
+    }
+    
+    .button-left {
+        font-size: 0.9rem;
+        padding: 0.35rem 0.75rem;
+    }
+    
+    .buttons-right {
+        width: 25%;
+    }
+    
+    .showLabel {
+        font-size: 0.75rem;
+        padding: 2px 5px;
+    }
+    
+    #inputComponent div[role="button"] {
+        padding: 0.5rem;
+    }
 }

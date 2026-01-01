@@ -1,9 +1,10 @@
 .menu{
-    width: 9rem;
-    padding-right: 8.5rem;
-    padding-left: 1.25rem;
     display: flex;
     align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    gap: 0.5rem;
 }
 
 .menu:hover{
@@ -11,7 +12,20 @@
 }
 
 .menuIcon{
-    padding: 1.25rem;
+    padding: 0.25rem;
+    margin-right: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Normalize icon appearance and override global scale transforms */
+.menuIcon{
+    font-size: 1.25rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    line-height: 1;
+    transform: none !important;
 }
 
 .active{
@@ -19,10 +33,90 @@
 }
 
 #sideBarDiv{
-    word-wrap: break-word;
-    word-break: break-all;
     height: 95%;
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: white;
+    width: 250px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    z-index: 100;
+}
+
+/* Prevent labels from breaking between every character */
+.menu span{
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Mobile Responsive Sidebar */
+@media (max-width: 768px) {
+    #sideBarDiv {
+        position: fixed;
+        left: 0;
+        top: 3.5rem;
+        height: calc(100vh - 3.5rem);
+        width: 280px;
+        transform: translateX(-100%);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+    
+    #sideBarDiv:not(.disabled) {
+        transform: translateX(0);
+    }
+    
+    /* Overlay when sidebar is open */
+    #sideBarDiv:not(.disabled)::before {
+        content: '';
+        position: fixed;
+        top: 3.5rem;
+        left: 280px;
+        width: calc(100vw - 280px);
+        height: calc(100vh - 3.5rem);
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+    
+    .menu {
+        width: 100%;
+        padding-right: 1.25rem;
+        padding-left: 1.25rem;
+        justify-content: flex-start;
+    }
+    
+    .menu span {
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #sideBarDiv {
+        width: 100vw;
+        left: 0;
+    }
+    
+    #sideBarDiv:not(.disabled)::before {
+        display: none;
+    }
+}
+
+/* Ensure menu items are properly spaced on mobile */
+@media (max-width: 768px) {
+    #sideBarDiv ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #sideBarDiv li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 }

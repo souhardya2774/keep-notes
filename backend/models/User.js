@@ -6,6 +6,10 @@ const userSchema= new mongoose.Schema({
         required: true,
         unique: true
     },
+    displayName:{
+        type: String,
+        default: ""
+    },
     labels:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Label"
@@ -14,6 +18,8 @@ const userSchema= new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Note"
     }]
+},{
+    timestamps: true
 });
 
 module.exports= mongoose.model("User",userSchema);

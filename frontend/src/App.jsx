@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import SideBar from "./SideBar";
 import NotesBar from "./NotesBar";
 import EditLabel from "./EditLabel";
+import Profile from "./Profile";
 import Page from "./404";
 import Unauthorized from "./401";
 
@@ -29,19 +30,43 @@ function App() {
           });
   },[]);
 
+  // Handle window resize for mobile
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setActiveSidebar(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   console.log(labels);
 
   return (
     <>
       <Navbar user={user} search={search} setSearch={setSearch} activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar}/>
       <div id="page">
-        {user && <SideBar labels={labels} activeSidebar={activeSidebar} open={open} setOpen={setOpen}/>}
+        {user && (
+          <>
+            <SideBar labels={labels} activeSidebar={activeSidebar} open={open} setOpen={setOpen}/>
+            {/* Mobile backdrop */}
+            {activeSidebar && window.innerWidth <= 768 && (
+              <div 
+                className="sidebar-backdrop"
+                onClick={() => setActiveSidebar(false)}
+              />
+            )}
+          </>
+        )}
         <Routes>
          {!user && <Route path="*" element={<Unauthorized/>} />}
          {user && <>
           <Route path="" element={<NotesBar search={search} labels={labels} connection={"home"}/>}/>
           <Route path="labels/:id" element={<NotesBar search={search} labels={labels} connection={"label"}/>}/>
           <Route path="archived" element={<NotesBar search={search} labels={labels} connection={"archived"}/>}/>
+          <Route path="profile" element={<Profile/>}/>
           <Route path="401" element={<Unauthorized/>} />
           <Route path="*" element={<Page/>} />
          </>}

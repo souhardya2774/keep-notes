@@ -6,7 +6,7 @@ const ObjectId= require("mongoose").Types.ObjectId;
 
 // @Failed in login
 const loginFailed=(req,res)=>{
-    // console.log("Failed");
+    console.log("Failed");
     res.status(401).json({
         success: false,
         message: "Login failed"
@@ -15,30 +15,32 @@ const loginFailed=(req,res)=>{
 
 // @Check User is logged in or not
 const checkLogin= asyncHandler(async(req,res)=>{
-    // console.log(req);
-    console.log("Here",req.user);
-    if(!(req.user) || !(isValidObjectId(req.user))){
+    console.log("Check login - req.user:", req.user);
+    
+    if(!req.user){
         return res.status(401).json({
             auth: false
         });
     }
-    const Id= req.user;
+    
+    // req.user is now the full user object from deserialization
+    const user = req.user;
+    console.log("User found:", user);
 
-    const user=await User.findById(new ObjectId(Id)).select("-profileId -notes").lean().populate("labels","-notes -userId").exec();
-    console.log(user);
-
-    if(!user){
+    if(!user._id){
         return res.status(401).json({
             auth: false
         });
     }
-    res.status(200).json(user.labels);
+    
+    // Return user's labels
+    res.status(200).json(user.labels || []);
 });
 
 // @Logout User
 const logout= (req,res)=>{
     req.logout();
-    res.redirect("https://keep-notes-client.vercel.app");
+    res.redirect("http://localhost:5173");
 };
 
 module.exports= {
